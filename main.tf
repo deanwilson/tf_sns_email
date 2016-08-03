@@ -1,5 +1,5 @@
 
-resource "template_file" "cloudformation_sns_stack" {
+data "template_file" "cloudformation_sns_stack" {
     template = "${file("${path.module}/templates/email-sns-stack.json.tpl")}"
 
     vars {
@@ -12,7 +12,7 @@ resource "template_file" "cloudformation_sns_stack" {
 
 resource "aws_cloudformation_stack" "sns-topic" {
     name = "${var.stack_name}"
-    template_body = "${template_file.cloudformation_sns_stack.rendered}"
+    template_body = "${data.template_file.cloudformation_sns_stack.rendered}"
 
     tags {
         Owner = "${var.owner}"
