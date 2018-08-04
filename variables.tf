@@ -1,20 +1,20 @@
 variable "display_name" {
-    type = "string"
+  type = "string"
 }
 
 variable "email_address" {
-    type = "string"
+  type = "string"
 }
 
 variable "owner" {
-    type = "string"
+  type = "string"
 }
 
 variable "protocol" {
-    default = "email"
-    type    = "string"
+  default = "email"
+  type    = "string"
 }
 
 variable "stack_name" {
-    type = "string"
+  type = "string"
 }
