@@ -1,13 +1,22 @@
+variable "aws_region" {
+  type        = "string"
+  description = "AWS region"
+  default     = "eu-west-1"
+}
+
 variable "display_name" {
-  type = "string"
+  type    = "string"
+  default = "tf_sns_email"
 }
 
 variable "email_address" {
-  type = "string"
+  type    = "string"
+  default = ""
 }
 
 variable "owner" {
-  type = "string"
+  type    = "string"
+  default = "tf_sns_email"
 }
 
 variable "protocol" {
@@ -16,5 +25,6 @@ variable "protocol" {
 }
 
 variable "stack_name" {
-  type = "string"
+  type    = "string"
+  default = "tf_sns_email"
 }
