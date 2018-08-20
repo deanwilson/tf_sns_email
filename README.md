@@ -24,11 +24,21 @@ Use the module in your terraform files:
       stack_name    = "admin-sns-email"
     }
 
-and then run a `terraform get` to download the module.
+and then run a `terraform init` to download the module.
 
 Once you've applied it you can check the value with
 
     terraform output -module=admin-sns-email-topic arn
+
+### Tagging
+
+You can apply additional tags to CloudFormation stack that terraform
+creates using the `additional_tags` input when calling the module.
+
+    additional_tags = {
+      "RunFrom" = "Jenkins",
+      "Level"   = "SENSITIVE"
+    }
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
@@ -36,6 +46,7 @@ Once you've applied it you can check the value with
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
+| additional_tags | The tags to apply to resources created by this module | map | `<map>` | no |
 | aws_region | AWS region | string | `eu-west-1` | no |
 | display_name | Name shown in confirmation emails | string | `tf_sns_email` | no |
 | email_address | Email address to send notifications to | string | `` | no |
@@ -51,11 +62,6 @@ Once you've applied it you can check the value with
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
-
-### TODO
-
- * Find a way to pass an arbitrary mapping of tags through to the cfn stack.
-
 ### Author
 
-  [Dean Wilson](http://www.unixdaemon.net)
+  [Dean Wilson](https://www.unixdaemon.net)

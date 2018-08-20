@@ -1,3 +1,12 @@
+## Locals
+
+locals {
+  default_tags = {
+    "Terraform"        = "true"
+    "Terraform-Module" = "deanwilson-sns-email"
+  }
+}
+
 data "template_file" "cloudformation_sns_stack" {
   template = "${file("${path.module}/templates/email-sns-stack.json.tpl")}"
 
@@ -12,7 +21,9 @@ resource "aws_cloudformation_stack" "sns-topic" {
   name          = "${var.stack_name}"
   template_body = "${data.template_file.cloudformation_sns_stack.rendered}"
 
-  tags {
-    Owner = "${var.owner}"
-  }
+  tags = "${merge(
+    local.default_tags,
+    var.additional_tags,
+    map("Name", "${var.stack_name}")
+  )}"
 }
