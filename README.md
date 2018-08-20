@@ -16,12 +16,12 @@ stack and exposes the topics ARN back to, and through, Terraform
 Use the module in your terraform files:
 
     module "admin-sns-email-topic" {
-        source = "github.com/deanwilson/tf_sns_email"
+      source = "github.com/deanwilson/tf_sns_email"
 
-        display_name  = "Example.org Admin Notifications"
-        email_address = "admin@example.org"
-        owner         = "Example.org:Admin"
-        stack_name    = "admin-sns-email"
+      display_name  = "Example.org Admin Notifications"
+      email_address = "admin@example.org"
+      owner         = "Example.org:Admin"
+      stack_name    = "admin-sns-email"
     }
 
 and then run a `terraform get` to download the module.
