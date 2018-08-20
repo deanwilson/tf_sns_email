@@ -1,3 +1,9 @@
+variable "additional_tags" {
+  default     = {}
+  description = "The tags to apply to resources created by this module"
+  type        = "map"
+}
+
 variable "aws_region" {
   type        = "string"
   description = "AWS region"
