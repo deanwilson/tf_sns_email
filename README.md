@@ -49,10 +49,10 @@ creates using the `additional_tags` input when calling the module.
 | additional_tags | The tags to apply to resources created by this module | map | `<map>` | no |
 | aws_region | AWS region | string | `eu-west-1` | no |
 | display_name | Name shown in confirmation emails | string | `tf_sns_email` | no |
-| email_address | Email address to send notifications to | string | `` | no |
+| email_address | Email address to send notifications to | string | - | yes |
 | owner | Sets the owner tag on the CloudFormation stack | string | `tf_sns_email` | no |
 | protocol | SNS Protocol to use. email or email-json | string | `email` | no |
-| stack_name | Cloudformation stack name that wraps the SNS topic. Must be unique. | string | `tf_sns_email` | no |
+| stack_name | Cloudformation stack name that wraps the SNS topic. Must be unique. | string | `tf-sns-email` | no |
 
 ## Outputs
 
