@@ -19,7 +19,6 @@ variable "display_name" {
 variable "email_address" {
   type        = "string"
   description = "Email address to send notifications to"
-  default     = ""
 }
 
 variable "owner" {
@@ -37,5 +36,5 @@ variable "protocol" {
 variable "stack_name" {
   type        = "string"
   description = "Cloudformation stack name that wraps the SNS topic. Must be unique."
-  default     = "tf_sns_email"
+  default     = "tf-sns-email"
 }
