@@ -4,12 +4,6 @@ variable "additional_tags" {
   type        = "map"
 }
 
-variable "aws_region" {
-  type        = "string"
-  description = "AWS region"
-  default     = "eu-west-1"
-}
-
 variable "display_name" {
   type        = "string"
   description = "Name shown in confirmation emails"

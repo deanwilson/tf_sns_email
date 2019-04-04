@@ -47,7 +47,6 @@ creates using the `additional_tags` input when calling the module.
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | additional_tags | The tags to apply to resources created by this module | map | `<map>` | no |
-| aws_region | AWS region | string | `eu-west-1` | no |
 | display_name | Name shown in confirmation emails | string | `tf_sns_email` | no |
 | email_address | Email address to send notifications to | string | - | yes |
 | owner | Sets the owner tag on the CloudFormation stack | string | `tf_sns_email` | no |
